@@ -4,12 +4,25 @@
   "main": "dist/bundle.common.js",
   "module": "dist/bundle.esm.js",
   "unpkg": "dist/bundle.min.js",
+  "keywords": [
+    "rollup",
+    "babel",
+    "starter"
+  ],
   "author": "Leo Hui <leohxj@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "precommit": "lint-staged",
     "dev": "cross-env NODE_ENV=development rollup -w -c rollup.config.dev.js",
     "build": "rimraf dist && cross-env NODE_ENV=production rollup -c rollup.config.prod.js",
     "test": "jest"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
   },
   "files": [
     "src",
@@ -29,7 +42,9 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.8.0",
+    "husky": "^0.14.3",
     "jest": "^22.0.4",
+    "lint-staged": "^6.0.0",
     "rimraf": "^2.6.2",
     "rollup": "^0.53.3",
     "rollup-plugin-alias": "^1.4.0",
