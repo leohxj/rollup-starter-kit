@@ -12,7 +12,9 @@ const banner =
   ` * Released under the MIT License.\n` +
   ` */`;
 
-export default Object.assign({}, baseConfig, {
+// 支持输出 []
+export default [{
+  ...baseConfig,
   output: [
     {
       file: `dist/${name}.js`,
@@ -20,7 +22,23 @@ export default Object.assign({}, baseConfig, {
       name,
       banner,
       sourcemap: true
-    },
+    }
+  ],
+  plugins: [
+    ...baseConfig.plugins,
+    uglify(
+      {
+        compress: {
+          drop_console: true
+        }
+      },
+      minify
+    ),
+    filesize()
+  ]
+}, {
+  ...baseConfig,
+  output: [
     {
       file: `dist/${name}.min.js`,
       format: 'umd',
@@ -38,15 +56,8 @@ export default Object.assign({}, baseConfig, {
       banner
     }
   ],
-  plugins: baseConfig.plugins.concat([
-    uglify(
-      {
-        compress: {
-          drop_console: true
-        }
-      },
-      minify
-    ),
+  plugins: [
+    ...baseConfig.plugins,
     filesize()
-  ])
-});
+  ]
+}]
