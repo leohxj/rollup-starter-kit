@@ -1,4 +1,4 @@
-# a real scaffold for building library
+# a real scaffold for building library &middot; [![Author](https://img.shields.io/badge/%E4%BD%9C%E8%80%85-leohxj-7AD6FD.svg)](http://finalhome.org)
 
 - no css
 - export mutil version, such as: CJS, IIFE, ESM
