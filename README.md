@@ -1,15 +1,7 @@
 # a real scaffold for building library &middot; [![Author](https://img.shields.io/badge/Author-leohxj-blue.svg)](http://finalhome.org)
 
-- no css
-- export mutil version, such as: CJS, IIFE, ESM
-
-
-## TODO
-- [] output cjs, es module, IIFE
-- [] output min version, development with sourcemap
-- [] add jest
-- [] dev with a static file serve
-
+- No css
+- Output multiple version: cjs, umd, es module
 
 ## Tips
 - package.json 中 配置 main, module, unpkg 指向 cjs, esm, umd 三个版本

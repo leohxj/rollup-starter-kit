@@ -15,6 +15,7 @@ const banner =
 // 支持输出 []
 export default [{
   ...baseConfig,
+  // umd development version with sourcemap
   output: [
     {
       file: `dist/${name}.js`,
@@ -22,6 +23,21 @@ export default [{
       name,
       banner,
       sourcemap: true
+    }
+  ],
+  plugins: [
+    ...baseConfig.plugins,
+    filesize()
+  ]
+}, {
+  ...baseConfig,
+  // umd with compress version
+  output: [
+    {
+      file: `dist/${name}.min.js`,
+      format: 'umd',
+      name,
+      banner
     }
   ],
   plugins: [
@@ -36,15 +52,10 @@ export default [{
     ),
     filesize()
   ]
-}, {
+},{
   ...baseConfig,
+  // cjs and esm version
   output: [
-    {
-      file: `dist/${name}.min.js`,
-      format: 'umd',
-      name,
-      banner
-    },
     {
       file: `dist/${name}.common.js`,
       format: 'cjs',
