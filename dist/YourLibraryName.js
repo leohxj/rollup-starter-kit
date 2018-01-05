@@ -24,6 +24,15 @@ function cube(x) {
 
 console.log('cube: ' + cube(5)); // 125
 
+function foo(x) {
+  if (x) {
+    return x;
+  }
+  return 'default string';
+}
+
+console.log('foo:', foo(22));
+
 var main = 42;
 
 return main;

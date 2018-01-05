@@ -1,5 +1,6 @@
 module.exports = {
-  extends: ['airbnb-base', 'prettier'],
+  extends: ['airbnb-base', 'plugin:flowtype/recommended', 'prettier'],
+  plugins: ['flowtype'],
   env: {
     browser: true,
     node: true,
@@ -7,10 +8,10 @@ module.exports = {
     commonjs: true,
     jest: true
   },
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "sourceType": "module",
-    "allowImportExportEverywhere": true
+  parser: 'babel-eslint',
+  parserOptions: {
+    sourceType: 'module',
+    allowImportExportEverywhere: true
   },
   rules: {
     'class-methods-use-this': 'off',
