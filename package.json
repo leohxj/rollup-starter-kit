@@ -17,7 +17,7 @@
     "build": "rimraf dist && cross-env NODE_ENV=production rollup -c rollup.config.prod.js",
     "test": "npm run flow && jest",
     "flow": "flow check",
-    "commit": "git-cz"
+    "cz": "git-cz"
   },
   "lint-staged": {
     "src/**/*.js": [
