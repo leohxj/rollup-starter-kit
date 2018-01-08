@@ -1,16 +1,10 @@
 'use strict';
-var conventionalCommitTypes = require('conventional-commit-types');
+const types = require('commitlint-config-cz/lib/types')();
 
 module.exports = {
-    "extends" : ['cz'],
-    "rules": {
-        "type-enum": [
-            2,
-            "always",
-            Object.keys(conventionalCommitTypes.types)
-        ],
-        "subject-case": [
-            0
-        ]
-    }
-}
+  extends: ['cz'],
+  rules: {
+    'type-enum': [2, 'always', Object.keys(types)],
+    'subject-case': [0]
+  }
+};
