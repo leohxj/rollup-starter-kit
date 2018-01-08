@@ -1,10 +1,7 @@
 'use strict';
-const types = require('commitlint-config-cz/lib/types')();
+const config = require('commitlint-config-cz/lib/config')();
 
 module.exports = {
   extends: ['cz'],
-  rules: {
-    'type-enum': [2, 'always', Object.keys(types)],
-    'subject-case': [0]
-  }
+  rules: config
 };
