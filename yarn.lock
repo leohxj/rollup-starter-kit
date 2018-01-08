@@ -75,6 +75,10 @@
     lodash.pick "4.4.0"
     meow "3.7.0"
 
+"@commitlint/config-conventional@^5.2.3":
+  version "5.2.3"
+  resolved "http://registry.npm.taobao.org/@commitlint/config-conventional/download/@commitlint/config-conventional-5.2.3.tgz#63671b32b65cb68e7b238405403194b558ff559a"
+
 "@commitlint/core@^5.2.8":
   version "5.2.8"
   resolved "http://registry.npm.taobao.org/@commitlint/core/download/@commitlint/core-5.2.8.tgz#a04a1beb2d25c8b70b19d4c309af50902d4f1057"
