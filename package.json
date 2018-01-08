@@ -12,12 +12,16 @@
   "author": "Leo Hui <leohxj@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "precommit": "lint-staged",
     "dev": "cross-env NODE_ENV=development rollup -w -c rollup.config.dev.js",
     "build": "rimraf dist && cross-env NODE_ENV=production rollup -c rollup.config.prod.js",
     "test": "npm run flow && jest",
     "flow": "flow check",
     "cz": "git-cz"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "src/**/*.js": [
@@ -49,7 +53,7 @@
     "eslint-plugin-flowtype": "^2.40.1",
     "eslint-plugin-import": "^2.8.0",
     "flow-bin": "^0.62.0",
-    "husky": "^0.14.3",
+    "husky": "^0.15.0-beta.16",
     "jest": "^22.0.4",
     "lint-staged": "^6.0.0",
     "prettier": "^1.9.2",
