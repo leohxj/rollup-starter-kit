@@ -1,5 +1,8 @@
 'use strict';
 
 module.exports = {
-  extends: ['cz']
+  extends: ['cz'],
+  rules: {
+    'type-enum': [2, 'always', ['feat']]
+  }
 };
