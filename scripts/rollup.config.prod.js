@@ -3,7 +3,7 @@ import uglify from 'rollup-plugin-uglify';
 import { minify } from 'uglify-es';
 
 import baseConfig from './rollup.config.base';
-import { name, version, author } from './package.json';
+import { name, version, author } from '../package.json';
 
 // banner
 const banner =

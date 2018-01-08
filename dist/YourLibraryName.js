@@ -1,5 +1,5 @@
 /*!
- * YourLibraryName.js v1.0.0
+ * YourLibraryName.js v0.0.1
  * (c) 2017-2018 Leo Hui <leohxj@gmail.com>
  * Released under the MIT License.
  */
