@@ -1,9 +1,9 @@
 {
   "name": "YourLibraryName",
   "version": "0.1.0-canary.1",
-  "main": "dist/bundle.common.js",
-  "module": "dist/bundle.esm.js",
-  "unpkg": "dist/bundle.min.js",
+  "main": "dist/YourLibraryName.cjs.js",
+  "module": "dist/YourLibraryName.esm.js",
+  "unpkg": "dist/YourLibraryName.min.js",
   "keywords": [
     "rollup",
     "babel",
@@ -12,11 +12,13 @@
   "author": "Leo Hui <leohxj@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development rollup -w -c scripts/rollup.config.dev.js",
-    "build": "rimraf dist && cross-env NODE_ENV=production rollup -c scripts/rollup.config.prod.js",
+    "cz": "git-cz",
+    "clean": "rimraf dist",
+    "start": "yarn run clean && cross-env NODE_ENV=development rollup -w -c scripts/rollup.config.dev.js",
+    "build": "yarn run clean && cross-env NODE_ENV=production rollup -c scripts/rollup.config.prod.js",
     "test": "npm run flow && jest",
     "flow": "flow check",
-    "cz": "git-cz"
+    "serve": "serve -p 8080"
   },
   "husky": {
     "hooks": {
@@ -72,6 +74,7 @@
     "rollup-plugin-replace": "^2.0.0",
     "rollup-plugin-serve": "^0.4.2",
     "rollup-plugin-uglify": "^2.0.1",
+    "serve": "^6.5.1",
     "standard-version": "^4.3.0",
     "uglify-es": "^3.3.4"
   },

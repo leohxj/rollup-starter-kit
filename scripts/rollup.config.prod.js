@@ -57,7 +57,7 @@ export default [{
   // cjs and esm version
   output: [
     {
-      file: `dist/${name}.common.js`,
+      file: `dist/${name}.cjs.js`,
       format: 'cjs',
       banner
     },

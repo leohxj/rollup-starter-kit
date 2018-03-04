@@ -2,6 +2,7 @@
 
 [README in English](README.md)
 
+
 ## Tips
 - package.json 中 配置 main, module, unpkg 指向 cjs, esm, umd 三个版本
 - sourcemap, 应该在 development 版本中输出, 生产环境不需要, library 会被应用层再次打包, 由应用控制 sourcemap 的输出

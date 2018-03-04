@@ -1,15 +1,14 @@
 /* @flow */
 import { cube } from './maths';
 
-console.log(`cube: ${cube(5)}`); // 125
-
-function foo(x: ?string): string {
+// 只使用了 cube, 所以 maths 中的 square 会被 tree shaking 移除掉
+function foo(x: ?number): number {
   if (x) {
-    return x;
+    return cube(x);
   }
-  return 'default string';
+  return -1;
 }
 
-console.log('foo:', foo(22));
-
-export default 42;
+export default {
+  foo
+};

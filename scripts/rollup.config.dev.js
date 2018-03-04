@@ -6,8 +6,8 @@ import { name } from '../package.json';
 export default {
   ...baseConfig,
   output: [{
-    file: `temp/${name}.js`,
-    format: 'umd',
+    file: `dist/${name}.cjs.js`,
+    format: 'cjs',
     name,
     sourcemap: 'inline'
   }],

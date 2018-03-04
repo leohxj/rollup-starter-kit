@@ -1,5 +1,5 @@
 /*!
- * YourLibraryName.js v0.0.1
+ * YourLibraryName.js v0.1.0-canary.1
  * (c) 2017-2018 Leo Hui <leohxj@gmail.com>
  * Released under the MIT License.
  */
@@ -11,22 +11,19 @@ var PI = 3.14;
 
 // This function gets included
 function cube(x) {
-	// rewrite this as `square( x ) * x`
-	// and see what happens!
 	return x * x * x * PI;
 }
 
-console.log('cube: ' + cube(5)); // 125
-
+// 只使用了 cube, 所以 maths 中的 square 会被 tree shaking 移除掉
 function foo(x) {
   if (x) {
-    return x;
+    return cube(x);
   }
-  return 'default string';
+  return -1;
 }
 
-console.log('foo:', foo(22));
-
-var main = 42;
+var main = {
+  foo: foo
+};
 
 export default main;
