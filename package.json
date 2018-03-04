@@ -1,6 +1,6 @@
 {
   "name": "YourLibraryName",
-  "version": "0.1.0-canary.1",
+  "version": "0.1.0",
   "main": "dist/YourLibraryName.cjs.js",
   "module": "dist/YourLibraryName.esm.js",
   "unpkg": "dist/YourLibraryName.min.js",
@@ -18,7 +18,8 @@
     "build": "yarn run clean && cross-env NODE_ENV=production rollup -c scripts/rollup.config.prod.js",
     "test": "npm run flow && jest",
     "flow": "flow check",
-    "serve": "serve -p 8080"
+    "serve": "serve -p 8080",
+    "release": "standard-version"
   },
   "husky": {
     "hooks": {
