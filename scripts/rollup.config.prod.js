@@ -13,62 +13,57 @@ const banner =
   ` */`;
 
 // 支持输出 []
-export default [{
-  ...baseConfig,
-  // umd development version with sourcemap
-  output: [
-    {
-      file: `dist/${name}.js`,
-      format: 'umd',
-      name,
-      banner,
-      sourcemap: true
-    }
-  ],
-  plugins: [
-    ...baseConfig.plugins,
-    filesize()
-  ]
-}, {
-  ...baseConfig,
-  // umd with compress version
-  output: [
-    {
-      file: `dist/${name}.min.js`,
-      format: 'umd',
-      name,
-      banner
-    }
-  ],
-  plugins: [
-    ...baseConfig.plugins,
-    uglify(
+export default [
+  // .js, .cjs.js, .esm.js
+  {
+    ...baseConfig,
+    output: [
+      // umd development version with sourcemap
       {
-        compress: {
-          drop_console: true
-        }
+        file: `dist/${name}.js`,
+        format: 'umd',
+        name,
+        banner,
+        sourcemap: true
       },
-      minify
-    ),
-    filesize()
-  ]
-},{
-  ...baseConfig,
-  // cjs and esm version
-  output: [
-    {
-      file: `dist/${name}.cjs.js`,
-      format: 'cjs',
-      banner
-    },
-    {
-      file: `dist/${name}.esm.js`,
-      format: 'es',
-      banner
-    }
-  ],
-  plugins: [
-    ...baseConfig.plugins,
-    filesize()
-  ]
-}]
+      // cjs and esm version
+      {
+        file: `dist/${name}.cjs.js`,
+        format: 'cjs',
+        banner
+      },
+      // cjs and esm version
+      {
+        file: `dist/${name}.esm.js`,
+        format: 'es',
+        banner
+      }
+    ],
+    plugins: [...baseConfig.plugins, filesize()]
+  },
+  // .min.js
+  {
+    ...baseConfig,
+    output: [
+      // umd with compress version
+      {
+        file: `dist/${name}.min.js`,
+        format: 'umd',
+        name,
+        banner
+      }
+    ],
+    plugins: [
+      ...baseConfig.plugins,
+      uglify(
+        {
+          compress: {
+            drop_console: true
+          }
+        },
+        minify
+      ),
+      filesize()
+    ]
+  }
+];

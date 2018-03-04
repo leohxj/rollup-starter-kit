@@ -9,6 +9,10 @@ function foo(x: ?number): number {
   return -1;
 }
 
+if (process.env.NODE_ENV !== 'production') {
+  console.log('-----');
+}
+
 export default {
   foo
 };

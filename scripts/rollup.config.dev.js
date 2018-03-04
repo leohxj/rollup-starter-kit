@@ -5,12 +5,20 @@ import { name } from '../package.json';
 
 export default {
   ...baseConfig,
-  output: [{
-    file: `dist/${name}.cjs.js`,
-    format: 'cjs',
-    name,
-    sourcemap: 'inline'
-  }],
+  output: [
+    {
+      file: `dist/${name}.js`,
+      format: 'umd',
+      name,
+      sourcemap: true
+    },
+    {
+      file: `dist/${name}.cjs.js`,
+      format: 'cjs',
+      name,
+      sourcemap: 'inline'
+    }
+  ],
   plugins: [
     ...baseConfig.plugins,
     serve({

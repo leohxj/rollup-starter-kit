@@ -17,7 +17,7 @@ var PI = 3.14;
 
 // This function gets included
 function cube(x) {
-	return x * x * x * PI;
+  return x * x * x * PI;
 }
 
 // 只使用了 cube, 所以 maths 中的 square 会被 tree shaking 移除掉
